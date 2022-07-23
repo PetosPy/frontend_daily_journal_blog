@@ -1,0 +1,11 @@
+<%- include("../partials/header.ejs") -%>
+
+<div class="blog_data">
+  <section class="sections section-fullPost">
+    <h2 class="post-heading"><%= selectedBlog.heading %></h2>
+    <p class="date"><%= selectedBlog.date %></p>
+    <p class="blog-text full-blog-text"><%= selectedBlog.paragraph%></p>
+  </section>
+</div>
+
+<%- include("../partials/footer.ejs") -%>

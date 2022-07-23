@@ -10,6 +10,7 @@ body {
   color: rgb(73, 72, 72);
   position: relative;
   height: 100%;
+  width: 100%;
 }
 
 div.nav-bar {
@@ -73,14 +74,17 @@ ul li a:hover {
   padding: 20px;
   max-height: 400px;
   max-width: 50%;
-  border: 1px solid rgb(194, 194, 194);
+  border: 1px solid rgb(218, 218, 218);
   border-radius: 10px;
 }
 section h1 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
-
+/* form.read-more {
+  display: inline-block;
+  margin-left: 0;
+} */
 p.date {
   margin-bottom: 20px;
 }
@@ -97,10 +101,30 @@ p.blog-text {
   text-overflow: ellipsis;
   margin-bottom: 20px;
 }
-section a:first-of-type {
+p.full-blog-text {
+  font-size: 1.5rem;
+  width: 80%;
+  overflow: visible;
+  white-space: normal;
+}
+
+div.blog_data {
+  height: 100vh;
+}
+section.section-fullPost {
+  margin: 60px 0 0 10px;
+  max-height: 600px;
+}
+
+section.section-fullPost:hover {
+  border: 1px solid #ff0063;
+}
+section button:first-of-type {
   text-decoration: none;
-  width: 40px;
-  height: 14px;
+  background-color: white;
+  display: block;
+  width: 90px;
+  height: 30px;
   padding: 5px;
   color: rgb(73, 72, 72);
   border: 2px solid #ff0063;
@@ -108,7 +132,7 @@ section a:first-of-type {
   margin-bottom: 20px;
 }
 
-section a:first-of-type:hover {
+section button:first-of-type:hover {
   background-color: #ff0063;
   color: white;
 }
@@ -143,7 +167,7 @@ h1.contact-heading {
   padding: 10px;
 }
 
-form {
+form.contacts {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

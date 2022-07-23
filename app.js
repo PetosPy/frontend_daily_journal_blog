@@ -19,6 +19,8 @@ app.use(express.static("public"));
 
 app.set("view engine", "ejs");
 
+var blogNumber = 0;
+
 app.get("/", function (req, res) {
   let newPost = {
     heading: "Work from home",
@@ -37,6 +39,20 @@ app.get("/about", function (req, res) {
 
 app.get("/contact", function (req, res) {
   res.render("pages/contact");
+});
+
+app.get("/read-blog", function (req, res) {
+  const selectedBlog = blogPosts[blogNumber];
+  console.log(selectedBlog);
+  res.render("pages/read-blog", {
+    selectedBlog: selectedBlog,
+  });
+});
+
+app.post("/read-blog", function (req, res) {
+  const blogId = req.body.blogId;
+  blogNumber = blogId;
+  res.redirect("/read-blog");
 });
 
 app.listen(3000, function () {

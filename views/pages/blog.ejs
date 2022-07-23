@@ -1,14 +1,17 @@
 <%-include("../partials/header.ejs") -%>
 <div class="main-container">
   <% for( let index = 0; index < blogPosts.length; index++ ) { %>
-  <section class="sections">
-    <h1>Day <b><%= index + 1 %></b></h1>
+  <form class="read-more" action="/read-blog" method="post">
+    <section class="sections">
+      <h1>Day <b><%= index + 1 %></b></h1>
 
-    <h2 class="post-heading"><%= blogPosts[index].heading %></h2>
-    <p class="date"><%= blogPosts[index].date %></p>
-    <p class="blog-text"><%= blogPosts[index].paragraph%></p>
-    <a href="#">Read more</a>
-  </section>
+      <h2 class="post-heading"><%= blogPosts[index].heading %></h2>
+      <p class="date"><%= blogPosts[index].date %></p>
+      <p class="blog-text"><%= blogPosts[index].paragraph%></p>
+      <input type="hidden" name="blogId" value="<%= index %>" />
+      <button href="#" type="submit">Read more</button>
+    </section>
+  </form>
 
   <% } %>
 </div>
